@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Raspberry</string>
+    <string name="title_home">列表</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">我的</string>
+    <string name="add_one">1、手机先连接WiFi网络</string>
+    <string name="add_two">2、长按配网按钮，等待滴滴两声提示，WiFi指示灯闪烁</string>
+    <string name="add_three">3、输入WiFi密码后，点击小程序页面连接按钮</string>
+    <string name="add_four">4、如果出现自动连接失败，请点击确定后，手动至WiFi设置连接shimge_pump</string>
+    <string name="add_five">5、从最近应用界面回到小程序，并点击确定</string>
+    <string name="add_six">6、等待配网成功</string>
+    <string name="add_seven">1、请打开WiFi和GPS定位功能</string>
+    <string name="add_eight">2、配网失败请重新开关WiFi功能再次尝试</string>
+    <string name="add_nine">3、不支持5g网络，请在网络信号稳定下配置</string>
+    <string name="about_one">
+            "\u3000\u3000"新界泵业（江苏）有限公司，是新界泵业集团股份有限公司
+        （股票代码:002532）在江苏沭阳投资的子公司，原集团旗下三大事业部之一的屏蔽泵事业部，
+        公司成立于2014年9月30日，位于江苏省沭阳县，是一家专业生产经营泵及水系统整体解决方案的企业。
+    </string>
+    <string name="about_two">
+         \u3000\u3000根据集团战略发展部署，2018年屏蔽泵事业部搬迁至江苏基地生产。
+        项目总投资2.8亿元，占地面积138.01亩，总建筑面积近9.9万平方米，引进具有国际先进水平的
+        生产设备，购置设备近118台/套，同年7月，新界江苏正式投入运营，形成年生产水泵400万台规模，
+        公司生产的循环泵、增压泵、智能变频泵、回水器、离心泵等系列水泵满足家庭供暖、地暖、空气能、
+        太阳能、燃气壁挂炉、变频热水循环系统、暖通空调、管道增压等全方位市场需求。
+    </string>
+    <string name="about_three">
+         \u3000\u3000“始终关注质量和成本，确保为用户创造价值”作为技术研发指导思想，公司自主研发的
+        智能热水回水器，解决用户用热水需等待、减少水资源浪费等难题，产品获得了广大消费者的普遍好评。
+        公司专注技术创新和人才培养。与江苏大学签订校企联盟协议，共同研发科研技术项目。公司在同行业
+        中具有明显的人才优势，其中，大、中专以上学历及专业技术人才占员工总数的30%以上。公司先后通
+        过iso9001、iso14001、ohsas18001认证，公司产品获得ccc认证、gs认证、ce认证等，并符合欧盟
+        REACH、RoHS指令规范。
+    </string>
+    <string name="about_four">
+         \u3000\u3000公司成立以来，把“实施高品质制造、提供高性价比产品和服务”作为公
+        司战略发展方向，创造性的为客户提供有价值的服务，公司先后与TCL、长虹、海信、海尔、美的等知
+        名品牌建立合作关系，在未来的发展道路上，新界江苏始终秉承“价值 创新 奋斗 共赢”的企业核心价
+        值观，践行“节能省电、高可靠性”的价值主张，为采暖和热水系统提供专业的水泵解决方案。
+    </string>
+</resources>

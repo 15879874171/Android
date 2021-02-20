@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.shimge.Shimge"
+    android:padding="5dp">
+<!--    顶部仪表盘部分-->
+    <LinearLayout
+        android:id="@+id/linlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1c9097"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@mipmap/yibiaopan"
+                android:scaleType="centerInside"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/guzhang"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特殊故障" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/tv_one"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_two">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_two"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tv_one"
+                app:layout_constraintRight_toLeftOf="@id/tv_three">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_three"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_two">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_four"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_one"
+                app:layout_constraintRight_toLeftOf="@id/tv_five"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_five"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tv_four"
+                app:layout_constraintTop_toBottomOf="@id/tv_two"
+                app:layout_constraintRight_toLeftOf="@id/tv_six"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tv_six"
+                android:layout_width="90dp"
+                android:layout_height="55dp"
+                android:background="@drawable/shimge_nb"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tv_five"
+                app:layout_constraintTop_toBottomOf="@id/tv_three"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0V"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入电压"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </LinearLayout>
+<!--第一层-->
+    <RelativeLayout
+        android:id="@+id/fun_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linlay"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/btn_left"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/shangyiye"
+                android:background="@drawable/shimge_left" />
+
+            <LinearLayout
+                android:layout_width="103dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/swiper_prean"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:id="@+id/swiper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/swiper_border" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/swiper_border"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/swiper_border"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/swiper_border"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/swiper_border" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btn_right"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/xiayiye"
+                android:background="@drawable/shimge_right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:background="@drawable/shimge_fun">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/mode"
+                android:dropDownWidth="160dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--第二层-->
+    <RelativeLayout
+        android:id="@+id/fun_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fun_one"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shimge_fun"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="压力传感器量程"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="30"
+                    android:background="@drawable/shimge_edit"
+                    android:textColor="#fff"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bar"
+                    android:textColor="#fff"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="2dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shimge_fun"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="恒压设定值"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="30"
+                    android:background="@drawable/shimge_edit"
+                    android:textColor="#fff"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bar"
+                    android:textColor="#fff"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="2dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--第三层-->
+    <RelativeLayout
+        android:id="@+id/fun_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fun_two"
+        android:layout_marginTop="30dp">
+<!--        左边定时启停-->
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shimge_fun"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="定时启停值"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="3dp">
+<!--左边输入框-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:text="30"
+                        android:background="@drawable/shimge_edit"
+                        android:textColor="#fff"
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="启h"
+                        android:textColor="#fff"
+                        android:layout_marginRight="2dp"
+                        android:ems="1"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+<!--右边输入框-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:text="30"
+                        android:background="@drawable/shimge_edit"
+                        android:textColor="#fff"
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="停h"
+                        android:textColor="#fff"
+                        android:layout_marginRight="2dp"
+                        android:ems="1"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+<!--        右边压力启停-->
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shimge_fun"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="压力启停值"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp">
+<!--第一个输入框-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:text="30"
+                        android:background="@drawable/shimge_edit"
+                        android:textColor="#fff"
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginRight="3dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="启"
+                            android:textColor="#fff"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="bar"
+                            android:textColor="#fff"
+                            android:textSize="10sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+<!--第二个输入框-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <EditText
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:text="30"
+                        android:background="@drawable/shimge_edit"
+                        android:textColor="#fff"
+                        android:layout_centerInParent="true"
+                        android:textAlignment="center"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginRight="3dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="停"
+                            android:textColor="#fff"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="bar"
+                            android:textColor="#fff"
+                            android:textSize="10sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+<!--第四层-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fun_three"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="167dp"
+            android:layout_height="50dp"
+            android:text="切换转向"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@drawable/shimge_open"
+            android:gravity="center"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="167dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:text="恢复出厂设置"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:background="@drawable/shimge_open"
+            android:gravity="center"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

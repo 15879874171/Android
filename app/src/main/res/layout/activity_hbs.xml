@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HBS.Hbs"
+    android:padding="10dp">
+<!--时钟-->
+    <LinearLayout
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center">
+
+
+
+    </LinearLayout>
+
+<!--定时按钮和温度-->
+    <RelativeLayout
+        android:id="@+id/temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15℃"
+            android:textColor="#009992"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+<!--上面3个输入框-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_top"
+        app:layout_constraintTop_toBottomOf="@id/temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+<!--        运行时间-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/edit_two">
+
+            <EditText
+                android:id="@+id/runtime"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min"
+                android:textSize="12dp"
+                android:textColor="#b0b8bd"
+                app:layout_constraintBottom_toBottomOf="@id/runtime"
+                app:layout_constraintLeft_toRightOf="@id/runtime"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运行时间"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/runtime"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        设定温度-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/edit_one"
+            app:layout_constraintRight_toLeftOf="@id/edit_three">
+
+            <EditText
+                android:id="@+id/setup"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="℃"
+                android:textSize="12dp"
+                android:textColor="#b0b8bd"
+                app:layout_constraintBottom_toBottomOf="@id/setup"
+                app:layout_constraintLeft_toRightOf="@id/setup"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设定温度"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/setup"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        延时时间-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/edit_two"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <EditText
+                android:id="@+id/delayed"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min"
+                android:textSize="12dp"
+                android:textColor="#b0b8bd"
+                app:layout_constraintBottom_toBottomOf="@id/delayed"
+                app:layout_constraintLeft_toRightOf="@id/delayed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="延时时间"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/delayed"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--下面面3个输入框-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_bot"
+        app:layout_constraintTop_toBottomOf="@id/edit_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <!--        运行档位-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/edit_five">
+
+            <EditText
+                android:id="@+id/runlevel"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="min"
+                android:textSize="12dp"
+                android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="@id/runlevel"
+                app:layout_constraintLeft_toRightOf="@id/runlevel"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运行档位"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/runlevel"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        温度回差-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/edit_four"
+            app:layout_constraintRight_toLeftOf="@id/edit_six">
+
+            <EditText
+                android:id="@+id/difference"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="℃"
+                android:textSize="12dp"
+                android:textColor="#b0b8bd"
+                app:layout_constraintBottom_toBottomOf="@id/difference"
+                app:layout_constraintLeft_toRightOf="@id/difference"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温度回差"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/difference"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        增压启动-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/edit_five"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <EditText
+                android:id="@+id/pressure"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/hbs_edit"
+                android:textAlignment="center"
+                android:singleLine="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L/min"
+                android:textSize="8dp"
+                android:textColor="#b0b8bd"
+                app:layout_constraintBottom_toBottomOf="@id/pressure"
+                app:layout_constraintLeft_toRightOf="@id/pressure"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="增压启动"
+                android:textSize="15sp"
+                android:textColor="#cfd2d8"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/pressure"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    底部开关-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_bot"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/off1"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

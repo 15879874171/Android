@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+<!--            设置边框线宽度和颜色-->
+            <stroke android:color="#647c82"
+                android:width="2dp"/>
+            <corners android:radius="10dp"/>
+            <solid android:color="#fff"/>
+        </shape>
+    </item>
+<!--    第二组item；设置spinner箭头图片-->
+    <item>
+        <bitmap
+            android:gravity="end"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24">
+        </bitmap>
+    </item>
+</layer-list>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinners">
+        <item>成员1</item>
+        <item>成员2</item>
+        <item>成员3</item>
+        <item>成员4</item>
+        <item>成员5</item>
+    </string-array>
+    <string-array name="mode">
+        <item>档位模式</item>
+        <item>浮球模式</item>
+        <item>恒压模式</item>
+        <item>压力启停模式</item>
+        <item>定时模式</item>
+        <item>恒压定时组合模式</item>
+    </string-array>
+</resources>

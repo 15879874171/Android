@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.HomeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/device_one"
+        android:layout_width="160dp"
+        android:layout_height="125dp"
+        android:background="@drawable/layerlist"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/device_two"
+        app:layout_constraintBottom_toTopOf="@id/device_three"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/device_icon1"
+                    android:layout_width="111dp"
+                    android:layout_height="85dp"
+                    android:src="@mipmap/shimge"
+                    android:layout_marginRight="5dp"/>
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="25dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/fenxiang" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="115dp"
+                    android:layout_height="25dp"
+                    android:text="电子锁"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:background="@drawable/shape_view"
+                    android:ellipsize="end"
+                    android:lines="1"/>
+
+                <ImageView
+                    android:id="@+id/icon_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/online"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="在线"
+                    android:textSize="10sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/icon_online"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_two"
+        android:layout_width="160dp"
+        android:layout_height="125dp"
+        android:background="@drawable/layerlist"
+        android:padding="8dp"
+        app:layout_constraintLeft_toRightOf="@id/device_one"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/device_add"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/device_icon2"
+                android:layout_width="111dp"
+                android:layout_height="85dp"
+                android:src="@mipmap/hbs"
+                android:layout_marginRight="5dp"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="25dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/fenxiang" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="25dp"
+                android:text="电子锁"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:background="@drawable/shape_view"
+                android:ellipsize="end"
+                android:lines="1"/>
+
+            <ImageView
+                android:id="@+id/icon_online2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/online"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线"
+                android:textSize="10sp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/icon_online2"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_three"
+        android:layout_width="160dp"
+        android:layout_height="125dp"
+        android:background="@drawable/layerlist"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_one"
+        app:layout_constraintRight_toLeftOf="@id/device_add"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/device_icon3"
+                android:layout_width="111dp"
+                android:layout_height="85dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/dianzisuo"
+                android:layout_marginRight="5dp"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="25dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/fenxiang" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="25dp"
+                android:text="电子锁"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:background="@drawable/shape_view"
+                android:ellipsize="end"
+                android:lines="1"/>
+
+            <ImageView
+                android:id="@+id/icon_online3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/online"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线"
+                android:textSize="10sp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/icon_online3"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_add"
+        android:layout_width="160dp"
+        android:layout_height="125dp"
+        android:background="@drawable/layerlist"
+        app:layout_constraintLeft_toRightOf="@id/device_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_two"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加新设备"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_home"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
