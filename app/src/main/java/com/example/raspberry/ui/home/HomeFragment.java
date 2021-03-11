@@ -1,41 +1,53 @@
 package com.example.raspberry.ui.home;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.raspberry.R;
+import com.example.raspberry.model.DeviceInstances;
 import com.example.raspberry.ui.HBS.Hbs;
 import com.example.raspberry.ui.add_one.AddEquipment;
 import com.example.raspberry.ui.add_three.AddEquiment3;
 import com.example.raspberry.ui.add_two.AddEquiment2;
 import com.example.raspberry.ui.controlpanel.ControlPanel;
 import com.example.raspberry.ui.shimge.Shimge;
+import com.example.raspberry.utils.PersonalProtocol;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class HomeFragment extends Fragment {
 
     private AlertDialog alert = null;
     private AlertDialog.Builder builder = null;
     private Intent in = null;
+    private Retrofit myRetro;
+    private String https;
+    private PersonalProtocol person;
 
     private HomeViewModel homeViewModel;
 
@@ -45,7 +57,7 @@ public class HomeFragment extends Fragment {
         ImageView img = root.findViewById(R.id.device_icon1);
         ImageView img2 = root.findViewById(R.id.device_icon2);
         ImageView img3 = root.findViewById(R.id.device_icon3);
-        LinearLayout device = root.findViewById(R.id.device_two);
+        LinearLayout device = root.findViewById(R.id.device_add);
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override
 //            public void onChanged(@Nullable String s) {
@@ -113,18 +125,30 @@ public class HomeFragment extends Fragment {
     }
 
     public void requestHttp(){
-        RequestQueue mque = Volley.newRequestQueue(getContext());
-        StringRequest str = new StringRequest("https://www.baidu.com",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("TAG", response);
-                    }
-                }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("TAG", error.getMessage(), error);
+        myRetro = new Retrofit.Builder().baseUrl(person.baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        person = myRetro.create(PersonalProtocol.class);
+
+        Call<DeviceInstances> call = person.getDeviceInstance();
+
+        call.enqueue(new Callback<DeviceInstances>() {
+            @Override
+            public void onResponse(Call<DeviceInstances> call, Response<DeviceInstances> response) {
+                System.out.println("请求内容");
+                System.out.println(response.body().getResult().getTotal());
+                List<DeviceInstances.Result.Data> arr = response.body().getResult().getData();
+                for (int i = 0; i < arr.size(); i++) {
+                    System.out.println(arr.get(i).toString());
                 }
+            }
+
+            @Override
+            public void onFailure(Call<DeviceInstances> call, Throwable t) {
+                System.out.println("请求失败");
+                System.out.println(t);
+            }
         });
     }
 

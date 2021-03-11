@@ -56,7 +56,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
     private Intent in = null;
 
     //电话号码
-    String tel = "4008883868";
+    private String tel = "4008883868";
 
     private NotificationsViewModel notificationsViewModel;
 
@@ -67,8 +67,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         ImageView icon = root.findViewById(R.id.title_icon);
-
-//        Picasso.get().load(R.mipmap.ic_launcher_round).into(icon);
 
         //设置点击事件
         baseId(root);
@@ -185,40 +183,5 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                 }
                 break;
         }
-    }
-
-    //使用圆形图片方法Picasso
-//    public void CircularImage(View root){
-//
-//        ImageView icon = root.findViewById(R.id.title_icon);
-//
-//        Picasso.get().load(R.mipmap.ic_launcher_round).transform(new Transformation() {
-//            @Override
-//            public Bitmap transform(Bitmap source) {
-//                source = create(source);
-//                source.recycle();
-//                return source;
-//            }
-//
-//            @Override
-//            public String key() {
-//                Log.d(TAG, "key() called");
-//                return "key";
-//            }
-//        }).into(icon);
-//
-//    }
-
-    //圆形图片
-    public static Bitmap create(@NotNull Bitmap source){
-        int len = source.getWidth() < source.getHeight() ? source.getWidth() : source.getHeight();
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        Bitmap tar = Bitmap.createBitmap(len, len, Bitmap.Config.ARGB_8888);
-        Canvas can = new Canvas(tar);
-        can.drawCircle(len / 2, len / 2, len / 2,paint);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        can.drawBitmap(source, 0 , 0, paint);
-        return tar;
     }
 }

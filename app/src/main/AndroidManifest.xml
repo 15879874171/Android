@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.raspberry">
+    package="com.example.raspberry"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Raspberry"
-        tools:replace="android:icon">
+        tools:replace="android:icon,android:label">
         <activity android:name=".ui.HBS.Hbs"></activity>
         <activity android:name=".ui.shimge.Shimge" />
         <activity android:name=".ui.equipment.Management" />
