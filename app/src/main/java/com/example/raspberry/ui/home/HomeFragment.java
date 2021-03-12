@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,25 +18,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.raspberry.R;
+import com.example.raspberry.model.PropertiesLatest;
 import com.example.raspberry.model.DeviceInstances;
+import com.example.raspberry.model.EquipmentLabel;
 import com.example.raspberry.ui.HBS.Hbs;
 import com.example.raspberry.ui.add_one.AddEquipment;
 import com.example.raspberry.ui.add_three.AddEquiment3;
 import com.example.raspberry.ui.add_two.AddEquiment2;
 import com.example.raspberry.ui.controlpanel.ControlPanel;
 import com.example.raspberry.ui.shimge.Shimge;
-import com.example.raspberry.utils.PersonalProtocol;
+import com.example.raspberry.utils.GetDeviceInformation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
@@ -45,9 +41,6 @@ public class HomeFragment extends Fragment {
     private AlertDialog alert = null;
     private AlertDialog.Builder builder = null;
     private Intent in = null;
-    private Retrofit myRetro;
-    private String https;
-    private PersonalProtocol person;
 
     private HomeViewModel homeViewModel;
 
@@ -65,8 +58,9 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
-        requestHttp();
-
+//        requestHttp();
+//        deviceLabel();
+        deviceDetails();
         //点击图片跳转页面
         img3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,14 +119,7 @@ public class HomeFragment extends Fragment {
     }
 
     public void requestHttp(){
-        myRetro = new Retrofit.Builder().baseUrl(person.baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        person = myRetro.create(PersonalProtocol.class);
-
-        Call<DeviceInstances> call = person.getDeviceInstance();
-
+        Call<DeviceInstances> call = new GetDeviceInformation().getDeviceInstances();
         call.enqueue(new Callback<DeviceInstances>() {
             @Override
             public void onResponse(Call<DeviceInstances> call, Response<DeviceInstances> response) {
@@ -152,4 +139,39 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    public void deviceLabel(){
+        String id = "863808044493155";
+        Call<EquipmentLabel> call = new GetDeviceInformation().getEquipmentLabel(id);
+        call.enqueue(new Callback<EquipmentLabel>() {
+            @Override
+            public void onResponse(Call<EquipmentLabel> call, Response<EquipmentLabel> response) {
+                System.out.println("请求成功");
+                System.out.println(response.body().getResult());
+            }
+
+            @Override
+            public void onFailure(Call<EquipmentLabel> call, Throwable t) {
+                System.out.println("请求失败");
+                System.out.println(t);
+            }
+        });
+    }
+
+    public void deviceDetails(){
+        String id = "863808044493155";
+        Call<PropertiesLatest> call = new GetDeviceInformation().getPropertiesLatest(id);
+        call.enqueue(new Callback<PropertiesLatest>() {
+            @Override
+            public void onResponse(Call<PropertiesLatest> call, Response<PropertiesLatest> response) {
+                System.out.println("请求成功");
+                System.out.println(response.body().getResult());
+            }
+
+            @Override
+            public void onFailure(Call<PropertiesLatest> call, Throwable t) {
+                System.out.println("请求失败");
+                System.out.println(t);
+            }
+        });
+    }
 }
