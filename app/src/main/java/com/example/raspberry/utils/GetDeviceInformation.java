@@ -2,7 +2,8 @@ package com.example.raspberry.utils;
 
 import com.example.raspberry.model.PropertiesLatest;
 import com.example.raspberry.model.DeviceInstances;
-import com.example.raspberry.model.EquipmentLabel;
+import com.example.raspberry.model.EquipmentTags;
+import com.example.raspberry.model.PropertiesUnit;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -23,9 +24,9 @@ public class GetDeviceInformation {
     }
 
     //获取设备标签
-    public Call<EquipmentLabel> getEquipmentLabel(String deviceId){
+    public Call<EquipmentTags> getEquipmentTags(String deviceId){
         person = myRetro.create(PersonalProtocol.class);
-        Call<EquipmentLabel> call = person.getEquipmentLabel(deviceId);
+        Call<EquipmentTags> call = person.getEquipmentTags(deviceId);
         return call;
     }
 
@@ -33,6 +34,13 @@ public class GetDeviceInformation {
     public Call<PropertiesLatest> getPropertiesLatest(String id){
         person = myRetro.create(PersonalProtocol.class);
         Call<PropertiesLatest> call = person.getPropertiesLatest(id);
+        return call;
+    }
+
+    //获取设备属性单位
+    public Call<PropertiesUnit> getPropertiesUnit(String id){
+        person = myRetro.create(PersonalProtocol.class);
+        Call<PropertiesUnit> call = person.getPropertiesUnit(id);
         return call;
     }
 

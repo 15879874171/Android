@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class EquipmentLabel {
+public class EquipmentTags {
 
     /**
      * result : [{"id":"8edf2092d36287d6d68e08495063f9bc","deviceId":"863808044407981","key":"owner","name":"所属用户","value":"1367669665890861056","type":"string","createTime":1615253137149}]
